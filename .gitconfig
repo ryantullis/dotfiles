@@ -1,0 +1,9 @@
+[user]
+	name = Ryan Tullis
+	email = tulliscryan@gmail.com
+[init]
+	defaultBranch = main
+
+[alias]
+  c = commit
+  cm = commit -m
