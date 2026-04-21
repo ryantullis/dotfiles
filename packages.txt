@@ -1,0 +1,52 @@
+# packages.txt
+
+# core utils
+stow
+linux
+linux-firmware
+kitty
+less
+fastfetch
+btop
+mpv #only way to know if my camera is on smh
+openssh
+ntp
+sudo
+unzip
+wget
+yay-bin
+wireguard-tools
+iwd
+
+# Desktop Environment
+hyprland 
+hyprpaper
+hyprpolkitagent
+hyprshot #screenshots
+waybar
+blueman
+brightnessctl
+impala
+swaync
+wofi
+xdg-desktop-portal-hyprland
+power-profiles-daemon
+qt6-wayland
+
+# needed apps
+1password
+firefox
+slack-desktop # :(
+spotify-launcher
+visual-studio-code-bin
+
+# dev tools
+git
+github-cli
+mariadb
+npm
+nvm
+docker
+docker-buildx
+docker-compose
+
