@@ -1,0 +1,134 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+	"reload_style_on_change": true,
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+	"hyprland/workspaces"
+    ],
+    "modules-center": [
+		"clock"
+    ],
+    "modules-right": [
+        "custom/pacman",
+        "battery",
+        "network",
+        "mpd",
+        "idle_inhibitor",
+        "pulseaudio",
+        "backlight",
+        "tray"
+    ],
+
+"clock": {
+	"format": "{:%B %d, %Y %r}",
+	"interval": 1
+},
+"hyprland/workspaces": {
+	"format": "{icon}",
+	"format-icons": {
+		"active": "",
+		"default": "",
+		"empty": ""
+	},
+	"persistent-workspaces": {
+		"*": [ 1,2,3,4,5 ]
+	}
+},
+"custom/pacman": {
+	"format": "󰅢 {}",
+	"interval": 30,   
+	"exec": "checkupdates | wc -l",
+	"exec-if": "exit 0",
+	"on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+	"signal": 8,
+	"tooltip": false
+},
+"battery": {
+	"interval":30,
+	"states": {
+		"good": 95,
+		"warning": 30,
+		"critical": 20
+	},
+	"format": "{icon} {capacity}%",
+	"format-alt": "{icon} {time}",
+    "format-icons": {
+        "default":  ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "charging":  ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+    }
+},
+"network": {
+	"format-wifi": "  {essid}",
+	"format-ethernet":"",
+	"format-disconnected": "",
+	"tooltip-format-disconnected": "Disconnected",
+	"on-click": "kitty impala"
+},
+
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+}
