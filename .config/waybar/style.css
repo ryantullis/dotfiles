@@ -23,14 +23,14 @@ window#waybar{
   padding-left: 5px;
   margin-top: 5px;
   margin-left: 5px;
-  background: alpha(@background,.8);
+  background: @background;
   border-radius: 150px; 
 }
 .modules-center {
   padding-right: 5px;
   padding-left: 5px;
   margin-top: 5px;
-  background: alpha(@background,.8);
+  background: @background;
   border-radius: 150px; 
 }
 .modules-right {
@@ -38,7 +38,7 @@ window#waybar{
   padding-left: 5px;
   margin-top: 5px;
   margin-right: 5px;
-  background: alpha(@background,.8);
+  background: @background;
   border-radius: 150px; 
 }
 tooltip {

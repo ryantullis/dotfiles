@@ -1,9 +1,15 @@
 
-@define-color mauve  #ffffff;
-@define-color red  #ffffff;
-@define-color lavender  #7f7fff;
-@define-color text  #ffffff;
-@define-color background #2b303b;
+@define-color fg #ebdbb2;
+@define-color fg0 #fbf1c7;
+@define-color red #fb4934;
+@define-color green #b8bb26;
+@define-color green-dark #98971a;
+@define-color yellow #fabd2f;
+@define-color blue #83a598;
+@define-color purple #d3869b;
+@define-color aqua #8ec07c;
+@define-color gray #a89984;
+@define-color background #282828;
 
 @keyframes fadeIn {
     0% {
@@ -14,7 +20,7 @@
 
 * {
     all:unset;
-    font-family: 'CodeNewRoman Nerd Font Mono', monospace;
+    font-family: "JetBrainsMono Nerd Font";
     font-size: 18px;
     outline: none;
     border: none;
@@ -25,7 +31,7 @@
 window {
     all:unset;
     padding: 20px;
-    border-radius: 0px;
+    border-radius: 20px;
     background-color: alpha(@background,.5);
 }
 #inner-box {
@@ -49,7 +55,7 @@ window {
     padding: 20px;
     border: none;
     outline: none;
-    color: @text;
+    color: @fg;
     box-shadow: 1px 1px 5px rgba(0,0,0, .5);
     border-radius:10;
     background-color: alpha(@background,.2);
@@ -70,16 +76,16 @@ window {
 
     border-radius:10;
 }
-#text {
+#fg {
     margin: 5px;
     border: none;
-    color: @text;
+    color: @fg;
     outline: none;
 }
 #text {
     margin: 5px;
     border: none;
-    color: @text;
+    color: @fg;
     outline: none;
 }
 #entry {
@@ -89,18 +95,18 @@ window {
 }
 #entry arrow {
     border: none;
-    color: @lavender;
+    color: @purple;
 
 }
 #entry:selected {
-    box-shadow: 1px 1px 5px rgba(255,255,255, .03);
+    box-shadow: 1px 1px 5px alpha(@fg0,0.7);
     border: none;
     border-radius: 20px;
     background-color:transparent;
 }
 #entry:selected #text {
-    color: @mauve;
+    color: @fg0;
 }
 #entry:drop(active) {
-    background-color: @lavender !important;
+    background-color: @purple !important;
 }
