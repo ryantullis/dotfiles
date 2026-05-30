@@ -48,5 +48,5 @@ npm
 nvm
 docker
 docker-buildx
-docker-compose
+dockercompose
 
