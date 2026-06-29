@@ -1,0 +1,12 @@
+/home/*/.cache
+/home/ryan/Downloads
+**/Cache
+**/CachedExtensionVSIXs
+**/extensionsCache
+**/Code Cache
+**/GPUCache
+**/node_modules
+**/http-cache
+**/.cache
+**/.npm
+/home/ryan/.local/share/Trash
