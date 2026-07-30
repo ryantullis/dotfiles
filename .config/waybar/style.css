@@ -10,7 +10,7 @@
 @define-color background #282828;
 * {
     font-size:14px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "FiraCode Nerd Font Mono";
 }
 window#waybar{
     color: @fg;

@@ -1,39 +1,69 @@
 return {
 	{
 		"mason-org/mason.nvim",
-		opts = {
-			ensure_installed = {
-				"typescript-language-server",
-				"lua_ls",
-				"pyright",
-			}
-		}
+		opts = {},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
+			"mason-org/mason.nvim",
+			"mason-org/mason-lspconfig.nvim",
 			{
 				"folke/lazydev.nvim",
-				ft = "lua", -- only load on lua files
+				ft = "lua",
 				opts = {
 					library = {
-						-- See the configuration section for more details
-						-- Load luvit types when the `vim.uv` word is found
 						{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
 					},
 				},
 			},
 		},
 		config = function()
-			vim.lsp.config('lua_ls', {})
-			vim.lsp.config('ts_ls', {})
-			vim.lsp.config('pyright', {})
+			require("mason").setup()
 
-			vim.lsp.enable('lua_ls')
-			vim.lsp.enable('ts_ls')
-			vim.lsp.enable('pyright')
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"ts_ls",
+					"pyright",
+					"svelte",
+					"prismals",
+					"html",
+				},
+				automatic_enable = true,
+			})
 
-			vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = "Open Diagnostic Float" })
+			vim.lsp.config("lua_ls", {})
+			vim.lsp.config("ts_ls", {})
+			vim.lsp.config("pyright", {})
+			vim.lsp.config("svelte", {
+				settings = {
+					svelte = {
+						plugin = {
+							svelte = {
+								defaultScriptLanguage = "ts",
+							}
+						},
+						format = {
+							config = {
+								singleQuote = true
+							}
+						}
+					}
+				}
+			})
+			vim.lsp.config("prismals", {})
+			vim.lsp.config("html", {})
+
+			vim.keymap.set("n", "<leader>df", vim.diagnostic.open_float, {
+				desc = "Open Diagnostic Float",
+			})
+
+			vim.keymap.set("n", "K", function()
+				vim.lsp.buf.hover({ border = "single" })
+			end, {
+				desc = "Hover documentation",
+			})
 		end,
-	}
+	},
 }
