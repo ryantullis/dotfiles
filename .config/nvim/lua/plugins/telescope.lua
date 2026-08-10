@@ -19,6 +19,9 @@ return {
 				builtin.git_files({ show_untracked=true })
 			end, { desc = "Git Files" })
 			vim.keymap.set("n","<leader>fb",require("telescope.builtin").buffers, { desc = "Buffers" })
+			vim.keymap.set("n","<leader>fG",function()
+				builtin.live_grep()
+			end, { desc = "Grep Files" })
 		end
 	}
 }
