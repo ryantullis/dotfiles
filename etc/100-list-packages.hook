@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Operation = Remove
+Target = *
+
+[Action]
+Description = Saving explicitly installed packages
+When = PostTransaction
+Exec = /bin/sh -c 'pacman -Qqe > /home/ryan/.dotfiles/packages.txt'
