@@ -20,4 +20,4 @@ vim.opt.number=true
 -- sync w/ system clipboard
 vim.opt.clipboard="unnamedplus"
 
-vim.opt.foldlevelstart=3
+vim.opt.foldlevelstart=99

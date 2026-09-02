@@ -53,6 +53,9 @@ return {
 			vim.keymap.set("n", "<leader>tw", function()
 				require("neotest").watch.toggle(vim.fn.expand("%"))
 			end, { desc = "Toggle Watch (Neotest)" })
+			vim.keymap.set("n", "<leader>tW", function()
+				require("neotest").watch.toggle(vim.uv.cwd())
+			end, { desc = "Toggle Watch All (Neotest)" })
 		end
 	}
 }

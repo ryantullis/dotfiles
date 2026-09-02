@@ -23,8 +23,10 @@ exfatprogs
 fastfetch
 fd
 firefox
+forgejo-runner
 fprintd
 git
+git-filter-repo
 github-cli
 glaze
 gnome-keyring
@@ -78,6 +80,7 @@ pavucontrol
 pipewire-pulse
 power-profiles-daemon
 pulseaudio-alsa
+python-pip
 qemu-base
 qrencode
 qt6-wayland
@@ -96,6 +99,7 @@ sudo
 swaync
 system-config-printer
 systemd-resolvconf
+tcpdump
 terraform
 tmux
 tree-sitter-cli
