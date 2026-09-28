@@ -13,6 +13,7 @@ return {
 			"typescript",
 			"dockerfile",
 			"markdown",
+			"yaml",
 		}
 	  vim.api.nvim_create_autocmd('FileType', {
 		pattern = {
@@ -23,6 +24,7 @@ return {
 			"typescript",
 			"dockerfile",
 			"markdown",
+			"yaml",
 		},
 		callback = function()
 		  -- syntax highlighting, provided by Neovim

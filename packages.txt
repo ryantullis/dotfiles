@@ -121,5 +121,6 @@ wireguard-tools
 woff2-font-awesome
 wofi
 xdg-desktop-portal-hyprland
+xorg-xhost
 yay
 yay-debug
