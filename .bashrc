@@ -8,3 +8,4 @@ alias dc='docker compose'
 dce() {
 	devcontainer exec --workspace-folder . "$@"
 }
+export PATH="$HOME/.local/bin:$PATH"
