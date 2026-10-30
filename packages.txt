@@ -58,6 +58,7 @@ lua-language-server
 man-db
 mariadb
 meson
+mkcert
 moonlight-qt
 mpv
 nano
@@ -124,3 +125,4 @@ xdg-desktop-portal-hyprland
 xorg-xhost
 yay
 yay-debug
+zram-generator

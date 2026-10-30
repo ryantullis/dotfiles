@@ -13,3 +13,5 @@
 # the RIGHT way
 [pull]
     rebase = true
+[credential "https://git.speechanddebate"]
+	org = ryan
