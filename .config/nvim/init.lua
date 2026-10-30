@@ -21,3 +21,13 @@ vim.opt.number=true
 vim.opt.clipboard="unnamedplus"
 
 vim.opt.foldlevelstart=99
+
+-- reload files changed on disk autoread is on by default
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold" }, {
+	callback = function()
+		if vim.fn.getcmdwintype() == "" then
+			vim.cmd("checktime")
+		end
+	end,
+})
+vim.opt.diffopt:append("algorithm:histogram")
