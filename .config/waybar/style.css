@@ -50,6 +50,7 @@ tooltip {
 #network,
 #clock,
 #custom-pacman,
+#custom-anki,
 #cpu,
 #memory,
 #temperature,
@@ -143,6 +144,16 @@ tooltip {
 #clock{
     color:@fg;
     transition: all .3s ease;
+}
+#custom-anki{
+    transition: all .3s ease;
+    color:@red;
+}
+#custom-anki.done{
+    color:@green;
+}
+#custom-anki.unknown{
+    color:@gray;
 }
 #custom-pacman{
     transition: all .3s ease;

@@ -14,6 +14,7 @@
 		"clock"
     ],
     "modules-right": [
+        "custom/anki",
         "custom/pacman",
         "battery",
         "network",
@@ -47,6 +48,13 @@
 	"on-click": "kitty sh -c 'yay -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
 	"signal": 8,
 	"tooltip": false
+},
+"custom/anki": {
+	"exec": "~/.config/waybar/scripts/anki-due.py",
+	"return-type": "json",
+	"interval": 60,
+	"on-click": "anki",
+	"signal": 9
 },
 "battery": {
 	"interval":30,
